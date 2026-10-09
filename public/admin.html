@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Administrador - Asistencia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="tarjeta ancha">
+    <h1>Panel del administrador</h1>
+
+    <section id="login">
+      <label for="clave">Clave de administrador</label>
+      <input id="clave" type="password">
+      <button id="btnLogin">Entrar</button>
+    </section>
+
+    <section id="panel" hidden>
+      <h2>Asistencias del día</h2>
+      <div class="fila">
+        <div>
+          <label for="fechaVer">Fecha</label>
+          <input id="fechaVer" type="date">
+        </div>
+        <button id="btnVer">Ver tabla</button>
+      </div>
+      <div class="tabla-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th><th>Apellido</th><th>DNI</th><th>Dirección</th>
+              <th>Docente / Alumno</th><th>Ingreso</th><th>Egreso</th><th>Fotos</th>
+            </tr>
+          </thead>
+          <tbody id="cuerpo"></tbody>
+        </table>
+      </div>
+
+      <hr>
+      <h2>Registrar hora de llegada / salida a mano</h2>
+      <div class="fila">
+        <div><label for="mDni">DNI</label><input id="mDni" inputmode="numeric"></div>
+        <div><label for="mFecha">Fecha</label><input id="mFecha" type="date"></div>
+        <div><label for="mIngreso">Hora de ingreso</label><input id="mIngreso" type="time"></div>
+        <div><label for="mEgreso">Hora de egreso</label><input id="mEgreso" type="time"></div>
+        <button id="btnManual">Guardar</button>
+      </div>
+
+      <hr>
+      <h2>Registrar alumno o docente</h2>
+      <div class="fila">
+        <div><label for="pNombre">Nombre</label><input id="pNombre"></div>
+        <div><label for="pApellido">Apellido</label><input id="pApellido"></div>
+        <div><label for="pDni">DNI</label><input id="pDni" inputmode="numeric" maxlength="10"></div>
+        <div><label for="pDireccion">Dirección</label><input id="pDireccion"></div>
+        <div>
+          <label for="pTipo">Tipo</label>
+          <select id="pTipo"><option value="alumno">Alumno</option><option value="docente">Docente</option></select>
+        </div>
+        <button id="btnPersona">Registrar</button>
+      </div>
+    </section>
+
+    <p id="mensaje" role="status"></p>
+    <a class="admin" href="index.html">Volver al registro de asistencia</a>
+  </main>
+  <script src="js/admin.js"></script>
+</body>
+</html>

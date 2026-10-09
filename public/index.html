@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registro de asistencia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="tarjeta">
+    <h1>Registro de asistencia</h1>
+
+    <section id="paso1">
+      <label for="dni">Ingresá tu DNI</label>
+      <input id="dni" inputmode="numeric" maxlength="10" placeholder="Solo números, sin puntos">
+      <button id="btnEntrar">Continuar</button>
+    </section>
+
+    <section id="paso2" hidden>
+      <h2 id="saludo"></h2>
+      <p id="estado"></p>
+      <div id="camara" hidden>
+        <video id="video" autoplay playsinline muted></video>
+        <canvas id="canvas" hidden></canvas>
+        <button id="btnFoto">Sacar foto</button>
+      </div>
+      <button id="btnSalir" class="secundario">Cambiar DNI</button>
+    </section>
+
+    <p id="mensaje" role="status"></p>
+    <a class="admin" href="admin.html">Acceso administrador</a>
+  </main>
+  <script src="js/asistencia.js"></script>
+</body>
+</html>
